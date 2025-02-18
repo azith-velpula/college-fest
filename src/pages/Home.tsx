@@ -129,7 +129,7 @@ export default function Home() {
                 </motion.h1>
               </motion.div>
               <motion.p
-                className="mt-6 text-[1.3rem] leading-8 text-muted-foreground text-gray-400"
+                className="mt-6 text-[1.3rem] leading-8  text-white/80"
                 variants={textVariants}
                 initial="initial"
                 animate="animate"
