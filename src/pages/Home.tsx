@@ -70,7 +70,7 @@ export default function Home() {
                       <motion.span
                         key={index}
                         variants={letterVariants}
-                        className="inline-block relative magic-text mr-6 text-white drop-shadow-[0_0_10px_rgba(255,165,0,0.8)]"
+                        className="inline-block relative magic-text mr-2 text-white drop-shadow-[0_0_10px_rgba(255,165,0,0.8)]"
                         animate={controls}
                         custom={index}
                         transition={{
