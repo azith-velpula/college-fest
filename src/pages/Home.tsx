@@ -7,59 +7,16 @@ import EventSchedule from "./EventSchedule";
 import Footer from "./Footer";
 import ContactSection from "./ContactSection";
 import EventHighlights from "./EventsHighlights";
-
-const textVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-      ease: "easeOut",
-    },
-  },
-};
-
-const letterVariants = {
-  initial: {
-    opacity: 0,
-    y: 50,
-    scale: 0.5,
-    rotateX: -90,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    rotateX: 0,
-  },
-};
-
-const container = {
-  initial: { opacity: 0 },
-  animate: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.04,
-    },
-  },
-};
+import Images from "../assets/images/img";
+import { container, letterVariants, textVariants } from "../config/textEffects";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const controls = useAnimationControls();
 
-  const images = [
-    "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1495837174058-628aafc7d610?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ];
-
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % images.length);
+      setCurrentSlide((prev) => (prev + 1) % Images.length);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
@@ -74,18 +31,19 @@ export default function Home() {
     };
     animateLetters();
   }, [controls]);
+
   return (
     <div>
       {/* Hero Section with Carousel */}
       <div className="relative h-screen">
         <div className="absolute inset-0">
-          {images.map((img, index) => (
+          {Images.map((img, index) => (
             <img
               key={index}
               src={img}
               alt={`Slide ${index + 1}`}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-                index === currentSlide ? "opacity-60" : "opacity-0"
+                index === currentSlide ? "opacity-100" : "opacity-0"
               }`}
             />
           ))}
@@ -104,7 +62,7 @@ export default function Home() {
                 <motion.h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-4">
                   <motion.span
                     variants={textVariants}
-                    className="block text-white mb-4"
+                    className="block bg-gradient-to-r from-[#ff8c00] via-[#ff0080] to-[#ff8c00] bg-clip-text text-transparent mb-4 p-4"
                   >
                     Experience the
                   </motion.span>
@@ -113,7 +71,7 @@ export default function Home() {
                       <motion.span
                         key={index}
                         variants={letterVariants}
-                        className="inline-block relative magic-text mr-6"
+                        className="inline-block relative magic-text mr-6 text-white drop-shadow-[0_0_10px_rgba(255,165,0,0.8)]"
                         animate={controls}
                         custom={index}
                         transition={{
@@ -129,7 +87,7 @@ export default function Home() {
                 </motion.h1>
               </motion.div>
               <motion.p
-                className="mt-6 text-[1.3rem] leading-8  text-white/80"
+                className="mt-6 text-[1.3rem] leading-8 text-white/90 drop-shadow-md"
                 variants={textVariants}
                 initial="initial"
                 animate="animate"

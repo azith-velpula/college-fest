@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -16,7 +16,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <Link
             to="/"
-            className="text-4xl py-3 font-bold bg-gradient-to-r from-orange-400 via-pink-500 to-yellow-500 text-transparent bg-clip-text"
+            className="text-4xl py-3 font-bold bg-gradient-to-r from-orange-300 via-yellow-500 to-yellow-500 text-transparent bg-clip-text"
           >
             Blitzkrieg 2k25
           </Link>
