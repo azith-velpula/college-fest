@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-
+import logo from "../assets/images/logo.png";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -16,9 +16,12 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <Link
             to="/"
-            className="text-2xl py-3 font-bold bg-gradient-to-r from-orange-300 via-yellow-500 to-yellow-500 text-transparent bg-clip-text"
+            className="text-2xl py-3 font-bold bg-gradient-to-r from-orange-600 via-yellow-500 to-orange-500 text-transparent bg-clip-text"
           >
-            Blitzkrieg 2k25
+            <div className="flex items-center gap-2">
+              <img src={logo} alt="event logo" height={50} width={50} />
+              Blitzkrieg 2k25
+            </div>
           </Link>
 
           <button

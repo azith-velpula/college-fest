@@ -6,7 +6,7 @@ export default function Sponsorship() {
       title: "Title Sponsor",
       description:
         "Prime branding, exclusive mentions, logo on merchandise, major media coverage, event-stage branding, and access to participant data.",
-      amount: "₹5 Lakhs+",
+      amount: "₹4 Lakhs+",
     },
     {
       title: "Platinum Sponsor",

@@ -9,7 +9,6 @@ import ContactSection from "./ContactSection";
 import EventHighlights from "./EventsHighlights";
 import Images from "../assets/images/img";
 import { container, letterVariants, textVariants } from "../config/textEffects";
-
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const controls = useAnimationControls();
